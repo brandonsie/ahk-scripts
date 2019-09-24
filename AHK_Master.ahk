@@ -1,10 +1,11 @@
 ﻿#SingleInstance, Force
 
-^!l::
+
+; Keypad Lock (ignore key/mouse presses)
+^!l:: ; Ctrl+Alt+L
 Run, %A_AHKPath% "%A_ScriptDir%\Scripts\KeypadLock.ahk"
 Traytip, KeypadLock, Keyboard Locked. Press Ctrl+Alt+L to Unlock., 0
 Return
-
 
 
 ; Press ~ to move up a folder in Explorer
@@ -14,16 +15,18 @@ Return
 return
 
 
-; Empty trash
-#Del::FileRecycleEmpty ; win + del
-return
+;; Empty trash
+;#Del::FileRecycleEmpty ; win + del
+;Traytip, Recycle Bin, Recycle Bin Emptied., 0
+;return
+;Todo - make this multistep hotkey for confirmation step.
 
 ; Suspend AutoHotKey
-#ScrollLock::Suspend ; Win + scrollLock
+#!S::Suspend ; Win + Alt + S
 return
 
 ; Always on Top
-^SPACE:: Winset, Alwaysontop, , A ; ctrl + space
+!SPACE:: Winset, Alwaysontop, , A ; alt + space
 Return
 
 ;https://www.maketecheasier.com/favorite-autohotkey-scripts/
