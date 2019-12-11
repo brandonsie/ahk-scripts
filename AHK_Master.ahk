@@ -42,3 +42,12 @@ return
 ; Open Dropbox folder
 ^+d::Run "C:\Users\brand\Dropbox" ; ctrl+shift+d
 return
+
+
+; Download New Satellite Wallpaper
+!+^w::Run "C:\Users\brand\Dropbox\3_Programming\GOES16_PowerShell_Wallpaper\Run_Automatically\run_setWP.bat" ;alt+shift+ctrl+w
+return
+
+; Download New Satellite Wallpaper 10k
+!+^q::Run "C:\Users\brand\Dropbox\3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually\run_setWP_10k.bat" ;alt+shift+ctrl+q
+return
