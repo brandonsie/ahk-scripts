@@ -36,18 +36,19 @@ Return
 
 
 ; Open Downloads folder
-^+j::Run "C:\Users\brand\Downloads" ; ctrl+shift+j
+^+j::Run % "C:\Users\" . A_UserName . "\Downloads" ; ctrl+shift+j
+
 return
 
 ; Open Dropbox folder
-^+d::Run "C:\Users\brand\Dropbox" ; ctrl+shift+d
+^+d::Run % "C:\Users\" . A_UserName . "\Dropbox" ; ctrl+shift+d
 return
 
 
 ; Download New Satellite Wallpaper
-!+^w::Run "C:\Users\brand\Dropbox\3_Programming\GOES16_PowerShell_Wallpaper\Run_Automatically\run_setWP.bat" ;alt+shift+ctrl+w
+!+^w::Run % "C:\Users\" . A_UserName . "\Dropbox\3_Programming\GOES16_PowerShell_Wallpaper\Run_Automatically\run_setWP.bat" ;alt+shift+ctrl+w
 return
 
 ; Download New Satellite Wallpaper 10k
-!+^q::Run "C:\Users\brand\Dropbox\3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually\run_setWP_10k.bat" ;alt+shift+ctrl+q
+!+^q::Run % "C:\Users\" . A_UserName . "\Dropbox\3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually\run_setWP_10k.bat" ;alt+shift+ctrl+q
 return
