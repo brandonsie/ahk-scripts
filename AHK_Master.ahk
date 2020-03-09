@@ -1,6 +1,15 @@
 ﻿#SingleInstance, Force
 
 
+
+; Change Icon
+; https://autohotkey.com/board/topic/121982-how-to-give-your-scripts-unique-icons-in-the-windows-tray/
+I_Icon = icons\AHK_master.ico
+; I_Icon = C:\Users\brand\Dropbox\3_Programming\ahk-scripts\icons\AHK_master.ico
+IfExist, %I_Icon%
+  Menu, Tray, Icon, %I_Icon%
+return
+
 ; Keypad Lock (ignore key/mouse presses)
 ^!l:: ; Ctrl+Alt+L
 Run, %A_AHKPath% "%A_ScriptDir%\Scripts\KeypadLock.ahk"
