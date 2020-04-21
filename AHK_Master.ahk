@@ -1,6 +1,14 @@
 ﻿#SingleInstance, Force
 
 
+; Reload
+;https://autohotkey.com/board/topic/43779-reload-this-script-shortcut-solved/
+^!r:: ; reload script with ctrl + alt + r
+  Msgbox, Do you really want to reload this script?
+  ifMsgBox, Yes
+    Reload
+  return
+
 
 ; Change Icon
 ; https://autohotkey.com/board/topic/121982-how-to-give-your-scripts-unique-icons-in-the-windows-tray/
@@ -53,6 +61,10 @@ return
 ^+d::Run % "C:\Users\" . A_UserName . "\Dropbox" ; ctrl+shift+d
 return
 
+; Toggle Alt Tab
+!^t::
+Run, %A_AHKPath% "%A_ScriptDir%\Scripts\win-10-alt-tab-behavior-toggle\alttabtoggle.ahk"
+return
 
 ; Download New Satellite Wallpaper
 !+^w::Run % "C:\Users\" . A_UserName . "\Dropbox\3_Programming\GOES16_PowerShell_Wallpaper\Run_Automatically\run_setWP.bat" ;alt+shift+ctrl+w
