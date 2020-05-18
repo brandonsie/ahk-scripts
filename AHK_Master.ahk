@@ -1,4 +1,17 @@
 ﻿#SingleInstance, Force
+SetWorkingDir, %A_ScriptDir%
+
+
+
+; Change Icon
+; https://autohotkey.com/board/topic/121982-how-to-give-your-scripts-unique-icons-in-the-windows-tray/
+I_Icon := "icons/AHK_master.ico"
+if FileExist(I_Icon) {
+  Menu, Tray, Icon, %I_Icon%
+} else{
+	MsgBox, %I_Icon%
+}
+Return
 
 
 ; Reload
@@ -7,16 +20,7 @@
   Msgbox, Do you really want to reload this script?
   ifMsgBox, Yes
     Reload
-  return
-
-
-; Change Icon
-; https://autohotkey.com/board/topic/121982-how-to-give-your-scripts-unique-icons-in-the-windows-tray/
-I_Icon = icons\AHK_master.ico
-; I_Icon = C:\Users\brand\Dropbox\3_Programming\ahk-scripts\icons\AHK_master.ico
-IfExist, %I_Icon%
-  Menu, Tray, Icon, %I_Icon%
-return
+Return
 
 ; Keypad Lock (ignore key/mouse presses)
 ^!l:: ; Ctrl+Alt+L

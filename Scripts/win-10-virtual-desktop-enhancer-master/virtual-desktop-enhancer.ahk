@@ -6,6 +6,7 @@
 #UseHook
 ; Credits to Ciantic: https://github.com/Ciantic/VirtualDesktopAccessor
 
+SetWorkingDir, %A_ScriptDir%
 #Include, %A_ScriptDir%\libraries\read-ini.ahk
 #Include, %A_ScriptDir%\libraries\tooltip.ahk
 
@@ -563,11 +564,13 @@ _ChangeBackground(n:=1) {
 
 _ChangeAppearance(n:=1) {
     Menu, Tray, Tip, % _GetDesktopName(n)
-    if (FileExist("./icons/" . n ".ico")) {
-        Menu, Tray, Icon, icons/%n%.ico
+    iconPath := A_ScriptDir . "\icons\" . n . ".ico"
+    if FileExist(iconPath) {
+        Menu, Tray, Icon, %iconPath%
     }
     else {
-        Menu, Tray, Icon, icons/+.ico
+        iconPath := A_ScriptDir . "\icons\" . + . ".ico"
+        Menu, Tray, Icon, %iconPath%
     }
 }
 
