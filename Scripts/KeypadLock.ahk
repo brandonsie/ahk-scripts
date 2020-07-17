@@ -59,8 +59,8 @@ WheelUp::
     return
 
 
-^!l::
-    Traytip, KeypadLock, Keyboard Unlocked. Press Ctrl+Alt+L to Relock., 0.1
+^!+l::
+    Traytip, KeypadLock, Keyboard Unlocked. Press Ctrl+Alt+Shift+L to Relock., 0.1
     Suspend
     ExitApp
 
