@@ -54,7 +54,13 @@ Return
 !SPACE:: 
   WinGetTitle, Title, A
   Winset, Alwaysontop, , A 
-  Traytip, Always On Top, Always On Top Toggled "%Title%", 0
+  WinGet, ExStyle, ExStyle, A
+  if(ExStyle & 0x8){
+    state = On
+  } else{
+    state = Off
+  }
+  Traytip, Always On Top, Always On Top Toggled %state% "%Title%", 0
 Return
 
 ; Open Downloads Folder [Ctrl + Alt + Shift + J/F]
