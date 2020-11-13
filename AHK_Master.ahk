@@ -37,6 +37,22 @@ Return
 Windows
 ------------------------------
 */
+ 
+
+; Caps lock behavior: CapsLock maps to escape. ctrl capslock maps to caps lock
+^!CapsLock::CapsLock ; Ctrl + Alt + CapsLock maps to CapsLock
+CapsLock::Ctrl ; CapsLock maps to Ctrl. Ctrl [ is vim escape
+; CapsLock::Esc ; CapsLock maps to Escape
+Ctrl & SC01A::Esc ; Ctrl + [ maps to escape
+^/::
+Send, \ ; ctrl/ maps to \
+Return
+^+,::
+Send, {{} ; ctrl shift < (ctrl shift ,) maps to {
+Return
+^+.::
+Send, {}} ; ctrl shift> (ctrl shift .) maps to }
+Return
 
 ; Keypad Lock (ignore key/mouse presses) [Ctrl + Alt + Shift + L]
 ^!+l::
@@ -50,8 +66,8 @@ Return
 #IfWinActive
 Return
 
-; Always on Top [Alt + Space]
-!SPACE:: 
+; Always on Top [Ctrl + Alt + Shift + Space]
+^!+SPACE:: 
   WinGetTitle, Title, A
   Winset, Alwaysontop, , A 
   WinGet, ExStyle, ExStyle, A
@@ -62,6 +78,7 @@ Return
   }
   Traytip, Always On Top, Always On Top Toggled %state% "%Title%", 0
 Return
+
 
 ; Open Downloads Folder [Ctrl + Alt + Shift + J/F]
 ^!+j::Run % "C:\Users\" . A_UserName . "\Downloads"
@@ -77,7 +94,7 @@ return
 return
 
 ; Open G Drive [Ctrl + Alt + Shift + G]
-^!+g::Run % "G:\" 
+^!+g::Run % "G:\My Drive" 
 return
 
 ;Toggle Alt Tab Behavior (Current vs. All Virtual Desktops) [Ctrl + Alt + Shift + T]
@@ -94,6 +111,10 @@ return
 return
 
   
+; R. type `%>%` <- magrittr::`%>%`
+^!+m::
+Send, ``{asc 0037}{>}{asc 0037}`` <- magrittr::``{asc 0037}{>}{asc 0037}``
+return
 
 /*
 ------------------------------

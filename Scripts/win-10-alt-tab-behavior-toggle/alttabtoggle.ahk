@@ -10,12 +10,22 @@
 RegRead, OutputVar, HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, VirtualDesktopAltTabFilter 
 
 if(OutputVar = 1){
-	RegWrite, REG_DWORD, HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, VirtualDesktopAltTabFilter, 0
-	MsgBox, Value was 1 (Current Desktop), now set to 0 (All Desktops)
+	MsgBox, 1,,Value was 1 (Current Desktop)`, should value be set to 0 (All Desktops)?
+  ifMsgBox, OK	
+  {
+    ; Update Registry
+    RegWrite, REG_DWORD, HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, VirtualDesktopAltTabFilter, 0
+    ; Restart Explorer
+    process, close, explorer.exe
+  }
 } else {
-	RegWrite, REG_DWORD, HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, VirtualDesktopAltTabFilter, 1
-	MsgBox, Value was 0 (All Desktops), now set to 1 (Current Desktop)
+	MsgBox, 1,,Value was 0 (All Desktops)`, should value be set to 1 (Current Desktop)?
+  ifMsgBox, OK 
+  {
+    ; Update Registry
+	  RegWrite, REG_DWORD, HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, VirtualDesktopAltTabFilter, 1
+    ; Restart Explorer
+    process, close, explorer.exe
+  }
 }
 
-; Restart Explorer
-process, close, explorer.exe
