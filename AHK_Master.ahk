@@ -121,23 +121,39 @@ return
 return
 
 ; R. type `%>%` <- magrittr::`%>%`
-;Send, ``{asc 0037}{>}{asc 0037}`` <- magrittr::``{asc 0037}{>}{asc 0037}``
 ^!+m::
-PasteText("`%>%` <- magrittr::`%>%`")
+;Send, ``{asc 0037}{>}{asc 0037}`` <- magrittr::``{asc 0037}{>}{asc 0037}``
+PasteText("``%>%`` <- magrittr::``%>%``")
+;PasteText("``{asc 0037}{>}{asc 0037}`` <- magrittr::``{asc 0037}{>}{asc 0037}``")
 return
 
 ; PasteText function
 ; https://robolife.wordpress.com/2011/05/07/code-snippets-with-autohotkey/
-PasteText(text)
+; StringReplace depreciated, replace with StrReplace
+; https://www.autohotkey.com/docs/commands/StringReplace.htm
+; StringReplace, OutputVar, InputVar, SearchText , ReplaceText, ReplaceAll
+; https://www.autohotkey.com/docs/commands/StrReplace.htm
+; ReplacedStr := StrReplace(Haystack, Needle , ReplaceText, OutputVarCount, Limit)
+PasteText(text) 
 {
    CurrentClip=%Clipboard%
-   StringReplace, replaced, text, Clip0, %Clipboard%, All
-   Clipboard=%replaced%
-   Send, ^V
-   Sleep, 50                    ; Don't change clipboard while pasting! (Sleep > 0)
+   Clipboard=%text%
+   ;Send %Clipboard%
+  Send {ctrl down}v{ctrl up} ; this works better than ^v notepad++ https://www.autohotkey.com/board/topic/131360-copy-paste-function/
+   ;Send, ^V ;simple paste doesnt work for notpad ++ ascii
+   Sleep, 50 ; Don't change clipboard while pasting! (Sleep > 0)
    Clipboard=%CurrentClip%           ; Restore original ClipBoard
    Clip0=
 }
+
+
+/*
+Hotstrings
+https://www.autohotkey.com/docs/Hotstrings.htm
+*/
+
+:XT:mag::PasteText("``%>%`` <- magrittr::``%>%``")
+
 
 /*
 ------------------------------
