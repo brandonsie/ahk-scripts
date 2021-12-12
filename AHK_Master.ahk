@@ -137,8 +137,10 @@ return
 PasteText(text) 
 {
    CurrentClip=%Clipboard%
+   Sleep, 50
    Clipboard=%text%
    ;Send %Clipboard%
+   
   Send {ctrl down}v{ctrl up} ; this works better than ^v notepad++ https://www.autohotkey.com/board/topic/131360-copy-paste-function/
    ;Send, ^V ;simple paste doesnt work for notpad ++ ascii
    Sleep, 50 ; Don't change clipboard while pasting! (Sleep > 0)
@@ -151,7 +153,7 @@ PasteText(text)
 Hotstrings
 https://www.autohotkey.com/docs/Hotstrings.htm
 */
-
+#Hotstring EndChars '/\
 :XT:mag::PasteText("``%>%`` <- magrittr::``%>%``")
 
 
