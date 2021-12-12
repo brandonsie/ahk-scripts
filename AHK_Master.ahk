@@ -78,23 +78,37 @@ Return
   }
   Traytip, Always On Top, Always On Top Toggled %state% "%Title%", 0
 Return
-
+ 
 
 ; Open Downloads Folder [Ctrl + Alt + Shift + J/F]
 ^!+j::Run % "C:\Users\" . A_UserName . "\Downloads"
-^!+f::Run % "C:\Users\" . A_UserName . "\Downloads"
+;^!+f::Run % "C:\Users\" . A_UserName . "\Downloads"
 Return
 
 ; Open Dropbox Folder [Ctrl + Alt + Shift + D]
 ^!+d::Run % "C:\Users\" . A_UserName . "\Dropbox" 
 return
 
+; Open Harvard Dropbox Folder [Ctrl + Alt + Shift + H]
+^!+h::Run % "C:\Users\" . A_UserName . "\Dropbox (HMS)" 
+return
+
 ; Open C Drive [Ctrl + Alt + Shift + C]
 ^!+c::Run % "C:\" 
 return
 
-; Open G Drive [Ctrl + Alt + Shift + G]
+; Open HMS G Drive [Ctrl + Alt + Shift + G]
 ^!+g::Run % "G:\My Drive" 
+return
+
+; Open Personal G Drive [Ctrl + Alt + Shift + F]
+^!+f::Run % "H:\My Drive"
+return
+
+; Open W10 Bluetoooth Menu [Ctrl + Alt  + Shift + B]
+^!+b::
+;Run, %comspec% 'start ms-settings:bluetooth'
+Run, %A_AHKPath% "%A_ScriptDir%\Scripts\bluetoothMenu.ahk"
 return
 
 ;Toggle Alt Tab Behavior (Current vs. All Virtual Desktops) [Ctrl + Alt + Shift + T]
@@ -103,18 +117,27 @@ Run, %A_AHKPath% "%A_ScriptDir%\Scripts\win-10-alt-tab-behavior-toggle\alttabtog
 return
 
 ; Download New Satellite Wallpaper [Ctrl + Alt + Shift + W]
-^!+w::Run % "C:\Users\" . A_UserName . "\Dropbox\3_Programming\GOES16_PowerShell_Wallpaper\Run_Automatically\run_setWP.bat"
+^!+w::Run % "C:\Users\" . A_UserName . "\Dropbox\3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually\runwp.bat"
 return
 
-; Download New Satellite Wallpaper 10k [Ctrl + Alt + Shift + Q]
-^!+q::Run % "C:\Users\" . A_UserName . "\Dropbox\3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually\run_setWP_10k.bat"
-return
-
-  
 ; R. type `%>%` <- magrittr::`%>%`
+;Send, ``{asc 0037}{>}{asc 0037}`` <- magrittr::``{asc 0037}{>}{asc 0037}``
 ^!+m::
-Send, ``{asc 0037}{>}{asc 0037}`` <- magrittr::``{asc 0037}{>}{asc 0037}``
+PasteText("`%>%` <- magrittr::`%>%`")
 return
+
+; PasteText function
+; https://robolife.wordpress.com/2011/05/07/code-snippets-with-autohotkey/
+PasteText(text)
+{
+   CurrentClip=%Clipboard%
+   StringReplace, replaced, text, Clip0, %Clipboard%, All
+   Clipboard=%replaced%
+   Send, ^V
+   Sleep, 50                    ; Don't change clipboard while pasting! (Sleep > 0)
+   Clipboard=%CurrentClip%           ; Restore original ClipBoard
+   Clip0=
+}
 
 /*
 ------------------------------
