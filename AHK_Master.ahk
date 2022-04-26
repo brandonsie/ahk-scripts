@@ -41,6 +41,7 @@ Windows
 
 ; Caps lock behavior: CapsLock maps to escape. ctrl capslock maps to caps lock
 ^!CapsLock::CapsLock ; Ctrl + Alt + CapsLock maps to CapsLock
+
 CapsLock::Ctrl ; CapsLock maps to Ctrl. Ctrl [ is vim escape
 ; CapsLock::Esc ; CapsLock maps to Escape
 Ctrl & SC01A::Esc ; Ctrl + [ maps to escape
@@ -66,6 +67,10 @@ Return
 #IfWinActive
 Return
 
+;; Shift + End rekeyed to Shift + F10 (right click). so i don't need to press fn
+;+End::+F10
+;Return
+
 ; Always on Top [Ctrl + Alt + Shift + Space]
 ^!+SPACE:: 
   WinGetTitle, Title, A
@@ -78,11 +83,18 @@ Return
   }
   Traytip, Always On Top, Always On Top Toggled %state% "%Title%", 0
 Return
- 
 
-; Open Downloads Folder [Ctrl + Alt + Shift + J/F]
+; Registry Edit -- Dark Mode [Ctrl + Win + Alt + D]
+^#!d::Run "C:\Windows\System32\rundark.bat" 
+^#!l::Run "C:\Windows\System32\runlight.bat" 
+
+; Open Desktop Folder [Ctrl + Alt + Shift + E]
+^!+e::Run % "C:\Users\" . A_UserName . "\Desktop"
+Return
+
+
+; Open Downloads Folder [Ctrl + Alt + Shift + J]
 ^!+j::Run % "C:\Users\" . A_UserName . "\Downloads"
-;^!+f::Run % "C:\Users\" . A_UserName . "\Downloads"
 Return
 
 ; Open Dropbox Folder [Ctrl + Alt + Shift + D]
@@ -120,10 +132,14 @@ return
 ^!+w::Run % "C:\Users\" . A_UserName . "\Dropbox\3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually\runwp.bat"
 return
 
+; Refresh wallpaper [ctrl + alt + shift +q]
+^!+q::Run % "C:\Users\" . A_UserName . "\Dropbox\3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually\refreshwp.bat"
+return
+
 ; R. type `%>%` <- magrittr::`%>%`
 ^!+m::
-;Send, ``{asc 0037}{>}{asc 0037}`` <- magrittr::``{asc 0037}{>}{asc 0037}``
-PasteText("``%>%`` <- magrittr::``%>%``")
+Send, ``{asc 0037}{>}{asc 0037}`` <- magrittr::``{asc 0037}{>}{asc 0037}``
+;PasteText("``%>%`` <- magrittr::``%>%``")
 ;PasteText("``{asc 0037}{>}{asc 0037}`` <- magrittr::``{asc 0037}{>}{asc 0037}``")
 return
 
@@ -155,7 +171,6 @@ https://www.autohotkey.com/docs/Hotstrings.htm
 */
 #Hotstring EndChars '/\
 :XT:mag::PasteText("``%>%`` <- magrittr::``%>%``")
-
 
 /*
 ------------------------------
