@@ -87,6 +87,11 @@ Return
 ; Registry Edit -- Dark Mode [Ctrl + Win + Alt + D]
 ^#!d::Run "C:\Windows\System32\rundark.bat" 
 ^#!l::Run "C:\Windows\System32\runlight.bat" 
+Return
+
+; Auto Git -- [Ctrl Win Alt S]
+^#!S::RunWait powershell -windowstyle hidden -command "C:\Users\Brandon\Dropbox\3_Programming\automated_scripts\auto_git\auto_git.ps1"
+Return
 
 ; Open Desktop Folder [Ctrl + Alt + Shift + E]
 ^!+e::Run % "C:\Users\" . A_UserName . "\Desktop"
