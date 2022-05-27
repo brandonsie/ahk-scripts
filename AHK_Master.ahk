@@ -90,7 +90,7 @@ Return
 Return
 
 ; Auto Git -- [Ctrl Win Alt S]
-^#!S::RunWait powershell -windowstyle hidden -command "C:\Users\Brandon\Dropbox\3_Programming\automated_scripts\auto_git\auto_git.ps1"
+^#!S::RunWait WScript.exe //B "C:\Windows\System32\launcher.vbs" powershell.exe -ExecutionPolicy ByPass -windowstyle hidden -command "C:\Users\Brandon\Dropbox\3_Programming\automated_scripts\auto_git\auto_git.ps1"
 Return
 
 ; Open Desktop Folder [Ctrl + Alt + Shift + E]
