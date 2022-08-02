@@ -110,6 +110,10 @@ return
 ^!+h::Run % "C:\Users\" . A_UserName . "\Dropbox (HMS)" 
 return
 
+; Open Nextcloud Folder [Ctrl + Alt + Shift + N]
+^!+n::Run % "C:\Users\" . A_UserName . "\Nextcloud"
+Return
+
 ; Open C Drive [Ctrl + Alt + Shift + C]
 ^!+c::Run % "C:\" 
 return
