@@ -31,6 +31,13 @@ Return
     Suspend
 Return
 
+/*
+------------------------------
+Source Scripts
+------------------------------
+*/
+Run, %A_AHKPath% "%A_ScriptDir%\Scripts\window_swap.ahk"
+
 
 /*
 ------------------------------
