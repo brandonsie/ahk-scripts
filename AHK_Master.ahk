@@ -36,7 +36,7 @@ Return
 Source Scripts
 ------------------------------
 */
-Run, %A_AHKPath% "%A_ScriptDir%\Scripts\window_swap.ahk"
+#include %A_ScriptDir%\Scripts\window_swap.ahk
 
 
 /*
