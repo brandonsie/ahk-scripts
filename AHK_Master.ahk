@@ -35,6 +35,8 @@ Return
 ------------------------------
 Source Scripts
 ------------------------------
+include https://www.autohotkey.com/docs/commands/_Include.htm
+forum to loop through include https://www.autohotkey.com/board/topic/78798-include-all-files-in-a-folder/
 */
 #include %A_ScriptDir%\Scripts\window_swap.ahk
 
@@ -55,7 +57,7 @@ Windows
    SysGet, Y1, 77
    SysGet, Width, 78
    SysGet, Height, 79
-   WinMove, %Title%,, X1-10, Y1, Width, Height
+   WinMove, %Title%,, X1-10, Y1, Width+20, Height
 return
 
 ; Alternative window minimize maximize on single screen (recoup default functionality after fancyzones usage)
