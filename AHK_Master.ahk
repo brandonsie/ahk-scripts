@@ -63,11 +63,11 @@ return
 ; Alternative window minimize maximize on single screen (recoup default functionality after fancyzones usage)
 ;  https://stackoverflow.com/questions/42918534/autohotkey-script-to-toggle-minimize-maximize-window
 ; Win+ Up/Dn max/min
-+Up::
+#Up::
 	WinGetActiveTitle, Title
 	WinMaximize, %Title%
 return
-+Down::
+#Down::
 	WinGetActiveTitle, Title
 	WinMinimize, %Title%
 return
