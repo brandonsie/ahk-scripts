@@ -74,20 +74,20 @@ return
 
 
 
-; Alt+Up PgUp; Alt+Down PgDn; Alt+Left Home; Alt+Right End
-!Up::
+; Win+Alt+Up PgUp;Win+Alt+Down PgDn; Win+Alt+Left Home; Win+Alt+Right End
+#!Up::
 Send {PgUp}
 Return
 
-!Down::
+#!Down::
 Send {PgDn}
 Return
 
-!Left::
+#!Left::
 Send {Home}
 Return
 
-!Right::
+#!Right::
 Send {End}
 Return
 
