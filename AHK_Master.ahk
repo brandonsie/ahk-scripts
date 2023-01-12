@@ -74,6 +74,23 @@ return
 
 
 
+; Alt+Up PgUp; Alt+Down PgDn; Alt+Left Home; Alt+Right End
+!Up::
+Send {PgUp}
+Return
+
+!Down::
+Send {PgDn}
+Return
+
+!Left::
+Send {Home}
+Return
+
+!Right::
+Send {End}
+Return
+
 
 
 ; Caps lock behavior: CapsLock maps to escape. ctrl capslock maps to caps lock
