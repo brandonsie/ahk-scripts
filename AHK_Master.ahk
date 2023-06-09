@@ -37,8 +37,9 @@ Source Scripts
 ------------------------------
 include https://www.autohotkey.com/docs/commands/_Include.htm
 forum to loop through include https://www.autohotkey.com/board/topic/78798-include-all-files-in-a-folder/
+window_swap: swap all windows from one monitor to another
 */
-#include %A_ScriptDir%\Scripts\window_swap.ahk
+#include %A_ScriptDir%\Scripts\window_swap.ahk 
 
 
 /*
