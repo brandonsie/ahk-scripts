@@ -207,6 +207,21 @@ Send, ``{asc 0037}{>}{asc 0037}`` <- magrittr::``{asc 0037}{>}{asc 0037}``
 ;PasteText("``{asc 0037}{>}{asc 0037}`` <- magrittr::``{asc 0037}{>}{asc 0037}``")
 return
 
+
+
+; rainmeter layouts
+; left rainmeter layout lab [Ctrl + Alt + Shift + I]
+^!+i::Run %A_ScriptDir%\Scripts\rainmeter_layouts\Rainmeter_Lab_Left.vbs
+
+; right rainmeter layout lab [Ctrl + Alt + Shift + o]
+^!+o::Run %A_ScriptDir%\Scripts\rainmeter_layouts\Rainmeter_Lab_Right.vbs
+
+
+
+
+
+
+
 ; PasteText function
 ; https://robolife.wordpress.com/2011/05/07/code-snippets-with-autohotkey/
 ; StringReplace depreciated, replace with StrReplace
