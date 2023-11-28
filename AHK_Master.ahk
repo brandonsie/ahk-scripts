@@ -145,7 +145,7 @@ Return
 Return
 
 ; Auto Git -- [Ctrl Win Alt S] Github
-^#!S::RunWait WScript.exe //B "C:\Windows\System32\launcher.vbs" powershell.exe -ExecutionPolicy ByPass -windowstyle hidden -command "C:\Users\Brandon\Dropbox\3_Programming\automated_scripts\auto_git\auto_git.ps1"
+^#!S::RunWait WScript.exe //B "C:\Windows\System32\launcher.vbs" powershell.exe -ExecutionPolicy ByPass -windowstyle hidden -command "C:\Users\Brandon\Nextcloud\3_Programming\automated_scripts\auto_git\auto_git.ps1"
 Return
 
 ; Open Desktop Folder [Ctrl + Alt + Shift + E]
@@ -193,11 +193,11 @@ Run, %A_AHKPath% "%A_ScriptDir%\Scripts\win-10-alt-tab-behavior-toggle\alttabtog
 return
 
 ; Download New Satellite Wallpaper [Ctrl + Alt + Shift + W]
-^!+w::Run % "C:\Users\" . A_UserName . "\Dropbox\3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually\runwp.bat"
+^!+w::Run % "C:\Users\" . A_UserName . "\Nextcloud\3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually\runwp.bat"
 return
 
 ; Refresh wallpaper [ctrl + alt + shift +q]
-^!+q::Run % "C:\Users\" . A_UserName . "\Dropbox\3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually\refreshwp.bat"
+^!+q::Run % "C:\Users\" . A_UserName . "\Nextcloud\3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually\refreshwp.bat"
 return
 
 ; R. type `%>%` <- magrittr::`%>%`
