@@ -193,7 +193,7 @@ Run, %A_AHKPath% "%A_ScriptDir%\Scripts\win-10-alt-tab-behavior-toggle\alttabtog
 return
 
 ; Download New Satellite Wallpaper [Ctrl + Alt + Shift + W]
-^!+w::Run % "C:\Users\" . A_UserName . "\Nextcloud\3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually\runwp.bat"
+^!+w::Run % "C:\Users\" . A_UserName . "\Nextcloud\3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually\runwp_dual.bat"
 return
 
 ; Refresh wallpaper [ctrl + alt + shift +q]
