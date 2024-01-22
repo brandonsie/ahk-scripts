@@ -50,6 +50,8 @@ Windows
 
 
 
+
+
 ;Shift + Windows + Up (maximize a window across all displays) https://stackoverflow.com/a/9830200/470749
 +#Up::
     WinGetActiveTitle, Title
@@ -189,6 +191,31 @@ return
 ^!+b::
 ;Run, %comspec% 'start ms-settings:bluetooth'
 Run, %A_AHKPath% "%A_ScriptDir%\Scripts\bluetoothMenu.ahk"
+return
+
+
+
+; restart windows explorer . ctrl alt win E
+; https://www.autohotkey.com/board/topic/93906-restart-explorer-the-official-way/
+^!#E::
+Process,close,explorer.exe
+sleep, 5000 ;This sleep 5000 is to let you see what actually happens. Decrease it later
+run, explorer.exe
+;WinWait, ahk_class CabinetWClass
+;WinClose ;close the new explorer window
+return
+
+; Registry change to dark mode 
+^!+v::
+; 1. prompt user (remind that script will kill win explorer windows. offer option to back out)
+; 2. change registry values to dark theme
+; 3. restart windows explorer
+; https://www.autohotkey.com/docs/v1/lib/RegWrite.htm
+
+MsgBox, 1, Proceed with Dark Mode?, This script will apply dark mode then close and restart windows explorer. Proceed?
+IfMsgBox Cancel
+	return
+Run, %A_AHKPath% "%A_ScriptDir%\Scripts\darkModeRefresh.ahk"
 return
 
 ;Toggle Alt Tab Behavior (Current vs. All Virtual Desktops) [Ctrl + Alt + Shift + T]
