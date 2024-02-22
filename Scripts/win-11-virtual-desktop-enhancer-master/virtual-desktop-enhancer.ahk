@@ -566,6 +566,7 @@ _ChangeAppearance(n:=1) {
     Menu, Tray, Tip, % _GetDesktopName(n)
     if (FileExist("./icons/" . n ".ico")) {
         Menu, Tray, Icon, icons/%n%.ico
+
     }
     else {
         Menu, Tray, Icon, icons/+.ico
