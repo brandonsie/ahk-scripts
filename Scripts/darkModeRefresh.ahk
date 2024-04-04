@@ -3,7 +3,12 @@ RegWrite, REG_DWORD, HKEY_CURRENT_USER, Software\Microsoft\Windows\CurrentVersio
 RegWrite, REG_DWORD, HKEY_CURRENT_USER, Software\Microsoft\Windows\CurrentVersion\Themes\Personalize, EnableTransparency, 0
 
 Process,close,explorer.exe
-sleep, 5000 ;This sleep 5000 is to let you see what actually happens. Decrease it later
-run, explorer.exe
+
+
+; commented out next 2 lines 2024-04-03. now that I'm using oneCommander, no reason to reopen windows explorer
+;sleep, 5000 ;This sleep 5000 is to let you see what actually happens. Decrease it later
+;run, explorer.exe
+
+
 ; old: Open Personalization:Color settings [Ctrl + Alt + Shift + V] (to toggle dark mode / transparency)
 ;Run, %A_AHKPath% "%A_ScriptDir%\Scripts\colorMenu.ahk"
