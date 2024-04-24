@@ -224,8 +224,8 @@ Run, %A_AHKPath% "%A_ScriptDir%\Scripts\win-10-alt-tab-behavior-toggle\alttabtog
 return
 
 ; Download New Satellite Wallpaper [Ctrl + Alt + Shift + W]
-;^!+w::Run "cmd bash /mnt/host/c/Users/Brandon/Nextcloud/3_Programming/GOES16_PowerShell_Wallpaper/Linux/dl_three.sh"
-^!+w::Run % "C:\Users\" . A_UserName . "\Nextcloud\3_Programming\GOES16_PowerShell_Wallpaper\Linux\dl_three.sh"
+^!+w::Run "C:\Users\Brandon\Nextcloud\3_Programming\GOES16_PowerShell_Wallpaper\Linux\win_wrapper.bat"
+;^!+w::Run % "C:\Users\" . A_UserName . "\Nextcloud\3_Programming\GOES16_PowerShell_Wallpaper\Linux\dl_three.sh"
 ;^!+w::Run % "C:\Users\" . A_UserName . "\Nextcloud\3_Programming\GOES16_PowerShell_Wallpaper\Run_Manually\runwp_tri.bat"
 return
 
