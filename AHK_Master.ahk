@@ -1,6 +1,8 @@
 ﻿#SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
 
+
+#include %A_ScriptDir%\Scripts\winresize.ahk
 /* 
 ------------------------------
 Autohotkey Behavior
@@ -36,12 +38,17 @@ Return
 Source Scripts
 ------------------------------
 include https://www.autohotkey.com/docs/commands/_Include.htm
+
+
 forum to loop through include https://www.autohotkey.com/board/topic/78798-include-all-files-in-a-folder/
 window_swap: swap all windows from one monitor to another
+winresize: expand/contract/relocate active window by 100px
 */
+
+
+
+
 #include %A_ScriptDir%\Scripts\window_swap.ahk 
-
-
 /*
 ------------------------------
 Windows
