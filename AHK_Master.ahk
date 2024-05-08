@@ -1,8 +1,11 @@
 ﻿#SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
 
-
 #include %A_ScriptDir%\Scripts\winresize.ahk
+Return
+
+
+
 /* 
 ------------------------------
 Autohotkey Behavior
