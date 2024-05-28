@@ -2,21 +2,33 @@
 SetWorkingDir, %A_ScriptDir%
 
 
+I_Icon := "icons/AHK_master.ico"
+Menu, Tray, Icon, %I_Icon%
+
+/*
+------------------------------
+Source Scripts
+- keep this secction at the top
+- breaks icon,, but that's it
+------------------------------
+include https://www.autohotkey.com/docs/commands/_Include.htm
+
+
+forum to loop through include https://www.autohotkey.com/board/topic/78798-include-all-files-in-a-folder/
+window_swap: swap all windows from one monitor to another. ctrl+alt+shift+z
+winresize: expand/contract/relocate active window by 100px
+*/
+
+#include %A_ScriptDir%\Scripts\winresize.ahk 
+#include %A_ScriptDir%\Scripts\window_swap.ahk 
+;#include .\Scripts\winresize.ahk 
+;#include .\Scripts\window_swap.ahk 
 
 /* 
 ------------------------------
 Autohotkey Behavior
 ------------------------------
 */ 
-
-; Change AHK_Master Tray Icon
-I_Icon := "icons/AHK_master.ico"
-if FileExist(I_Icon) {
-  Menu, Tray, Icon, %I_Icon%
-} else{
-	MsgBox, %I_Icon%
-}
-Return
 
 ; Reload AHK_Master [Ctrl + Alt + Shift + R]
 ^!+r:: 
@@ -33,22 +45,7 @@ Return
     Suspend
 Return
 
-/*
-------------------------------
-Source Scripts
-------------------------------
-include https://www.autohotkey.com/docs/commands/_Include.htm
 
-
-forum to loop through include https://www.autohotkey.com/board/topic/78798-include-all-files-in-a-folder/
-window_swap: swap all windows from one monitor to another. ctrl+alt+shift+z
-winresize: expand/contract/relocate active window by 100px
-*/
-
-
-
-
-#include %A_ScriptDir%\Scripts\window_swap.ahk 
 /*
 ------------------------------
 Windows
@@ -289,7 +286,7 @@ PasteText(text)
 Hotstrings
 https://www.autohotkey.com/docs/Hotstrings.htm
 */
-#Hotstring EndChars '/\
+#Hotstring EndChars '/\'
 :XT:mag::PasteText("``%>%`` <- magrittr::``%>%``")
 
 /*
@@ -324,9 +321,6 @@ SPACE space
 
 
 
-
-#include %A_ScriptDir%\Scripts\winresize.ahk
-Return
 
 
 

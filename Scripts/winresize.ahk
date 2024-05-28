@@ -5,7 +5,7 @@ Brandon Sie
 */
 
 ; can change this incrememnt value 
-increment = 100
+increment := 100
 
 
 ; Ctrl+Win + J/K/I/M 
@@ -73,6 +73,7 @@ Original script from
 https://stackoverflow.com/questions/46802268/autohotkey-how-to-resize-window-by-both-absolute-and-relative-height-after-inp/46809005#46809005
 Win + Equal. input box to choose reposition or resize window
 */
+/*
 #=:: ; set X/Y/width/height of window, `A` for active window
     InputBox, new_i, Resize, Height:, , 140, 130
     prefix := ""
@@ -102,4 +103,4 @@ Win + Equal. input box to choose reposition or resize window
             WinMove, A, , , , new_i,
         else
             WinMove, A, , , , , new_i
-    return
+*/
