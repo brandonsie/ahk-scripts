@@ -5,6 +5,8 @@ SetWorkingDir, %A_ScriptDir%
 I_Icon := "icons/AHK_master.ico"
 Menu, Tray, Icon, %I_Icon%
 
+; order of these Includes is a little finnicky. not sure why.
+; winresize - rekey - ... ahksettings. then everything seems to run properly.
 
 #Include %A_ScriptDir%\Scripts\winresize.ahk 
 	; winresize: expand/contract/relocate active window by 100px
