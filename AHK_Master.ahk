@@ -1,27 +1,41 @@
 ﻿#SingleInstance, Force
 SetWorkingDir, %A_ScriptDir%
 
-
+; Change Icon https://autohotkey.com/board/topic/121982-how-to-give-your-scripts-unique-icons-in-the-windows-tray/
 I_Icon := "icons/AHK_master.ico"
 Menu, Tray, Icon, %I_Icon%
 
 /*
 ------------------------------
 Source Scripts
-- keep this secction at the top
-- breaks icon,, but that's it
+- keep this section at the top
 ------------------------------
-include https://www.autohotkey.com/docs/commands/_Include.htm
+
+[[Notes]]
+- ^ Ctrl     + Shift     ! Alt     # Windows     SPACE space
+- include https://www.autohotkey.com/docs/commands/_Include.htm
+- can include all files in a folder https://www.autohotkey.com/board/topic/78798-include-all-files-in-a-folder/
+- need a line break at the end after the last 'Return'
+
+[[ToDo]]
 
 
-forum to loop through include https://www.autohotkey.com/board/topic/78798-include-all-files-in-a-folder/
-window_swap: swap all windows from one monitor to another. ctrl+alt+shift+z
-winresize: expand/contract/relocate active window by 100px
+[[Reference]]
+https://www.maketecheasier.com/favorite-autohotkey-scripts/
+
+
+
 */
+
+
+
+
 
 #include %A_ScriptDir%\Scripts\ahk_settings.ahk ; Ctrl+Alt+Shift+R/S to reload/suspend AHK_Master 
 #include %A_ScriptDir%\Scripts\winresize.ahk 
+	; winresize: expand/contract/relocate active window by 100px
 #include %A_ScriptDir%\Scripts\window_swap.ahk 
+	; Ctrl + Alt + Shift + Z: Swap all windows from one monitor to another 
 #include %A_ScriptDir%\Scripts\create_new_txt.ahk 
 	; press q in explorer to create new text file. now prompts user to enter filename
 #include %A_ScriptDir%\Scripts\window_manipulation.ahk 
@@ -64,38 +78,8 @@ winresize: expand/contract/relocate active window by 100px
 	; Ctrl + Win + Alt + S: run auto_git.ps1
 	; 	X : run same but window is hidden
 
-;#include .\Scripts\winresize.ahk 
-;#include .\Scripts\window_swap.ahk 
 
 
-/*
-------------------------------
-Resources
-https://www.maketecheasier.com/favorite-autohotkey-scripts/
-Change Icon https://autohotkey.com/board/topic/121982-how-to-give-your-scripts-unique-icons-in-the-windows-tray/
-Reload https://autohotkey.com/board/topic/43779-reload-this-script-shortcut-solved/
-
-------------------------------
-*/
-;; Empty trash
-;#Del::FileRecycleEmpty ; win + del
-;Traytip, Recycle Bin, Recycle Bin Emptied., 0
-;return
-;Todo - make this multistep hotkey for confirmation step.
-
-
-/* 
-------------------------------
-Notes
-------------------------------
-^ ctrl
-+ shift
-! alt
-# win
-SPACE space
-
-
-*/
 
 
 

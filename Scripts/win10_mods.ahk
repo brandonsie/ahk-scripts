@@ -45,3 +45,14 @@ return
 ; right rainmeter layout lab [Ctrl + Alt + Shift + o]
 ^!+o::Run %A_ScriptDir%\Scripts\rainmeter_layouts\Rainmeter_Lab_Right.vbs
 
+
+; Empty trash
+#Del::
+MsgBox, 1, Empty Recycle Bin?, This script will empty the recycle bin. Proceed? 
+If MsgBox Cancel
+	return
+FileRecycleEmpty ; win + del
+Traytip, Recycle Bin, Recycle Bin Emptied., 0
+return
+
+

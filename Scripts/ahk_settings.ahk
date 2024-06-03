@@ -2,6 +2,7 @@
 ------------------------------
 Autohotkey Behavior
 ------------------------------
+Reload https://autohotkey.com/board/topic/43779-reload-this-script-shortcut-solved/
 */ 
 
 ; Reload AHK_Master [Ctrl + Alt + Shift + R]
