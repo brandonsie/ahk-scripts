@@ -50,3 +50,5 @@ oWin := ""
 if FileExist(vPath)
 	Run, "%vPathNotepadP%" "%vPath%"
 Return
+
+

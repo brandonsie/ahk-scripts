@@ -5,6 +5,63 @@ SetWorkingDir, %A_ScriptDir%
 I_Icon := "icons/AHK_master.ico"
 Menu, Tray, Icon, %I_Icon%
 
+
+#Include %A_ScriptDir%\Scripts\winresize.ahk 
+	; winresize: expand/contract/relocate active window by 100px
+#Include %A_ScriptDir%\Scripts\rekey.ahk
+	; Capslock -> Control
+	; Ctrl + Alt + Capslock -> Capslock
+	; Ctrl + [ -> Escape
+	; Ctrl / -> \
+	; "Ctrl Shift <" -> {
+	; "Ctrl Shift >" -> }
+	; Ctrl + Alt + Shift + M : Magrittr pipe
+#Include %A_ScriptDir%\Scripts\ahk_settings.ahk 
+	; Ctrl+Alt+Shift+R/S to reload/suspend AHK_Master 
+#Include %A_ScriptDir%\Scripts\window_swap.ahk 
+	; Ctrl + Alt + Shift + Z: Swap all windows from one monitor to another 
+#Include %A_ScriptDir%\Scripts\create_new_txt.ahk 
+	; press q in explorer to create new text file. now prompts user to enter filename
+#Include %A_ScriptDir%\Scripts\window_manipulation.ahk 
+	; Shift + Win + Up: maximize a window across all displays
+	; Win + Up/Dn maximize/min (restore functionality after enabling fancyzones)
+	; Ctrl + ALt + Shift + Space : always on top
+#Include %A_ScriptDir%\Scripts\explorer_shortcuts.ahk
+	; Press ~ to move up a folder in Explorer
+	; Ctrl + Alt + Shift + ...
+		; E: open desktop
+		; J: open downloads
+		; D: open dropbox (personal)
+		; H: open dropbox (harvard)
+		; N: open nextcloud
+		; C: open c drive
+	; Restart windows explorer: Ctrl+Alt+Win+E
+#Include %A_ScriptDir%\Scripts\wallpaper.ahk
+	; Ctrl + Alt + Shift + ...
+		; W: download new satellite wallpaper
+		; Q: refresh/reload existing wallpaper
+#Include %A_ScriptDir%\Scripts\win10_mods.ahk
+	; Ctrl + Alt + Shift + ...
+		; B: open bluetooth Menu
+		; L: lock keypad
+		; V: registry -- re-enable dark mode and restart windows explorer
+		; T: toggle alt tab behavior (current vs. all virutal desktops)
+		; I: rainmeter layout lab_left
+		; O: rainmeter layout lab right
+	; Ctrl + Win + Alt + 
+		; D/L: older. toggle dark or light mode registry
+	; Win + Del : empty recycle bin (prompt first to confirm)
+#Include %A_ScriptDir%\Scripts\git.ahk
+	; Ctrl + Win + Alt + S: run auto_git.ps1
+	; 	X : run same but window is hidden
+
+
+
+
+
+
+
+
 /*
 ------------------------------
 Source Scripts
@@ -26,65 +83,4 @@ https://www.maketecheasier.com/favorite-autohotkey-scripts/
 
 
 */
-
-
-
-
-
-#include %A_ScriptDir%\Scripts\ahk_settings.ahk ; Ctrl+Alt+Shift+R/S to reload/suspend AHK_Master 
-#include %A_ScriptDir%\Scripts\winresize.ahk 
-	; winresize: expand/contract/relocate active window by 100px
-#include %A_ScriptDir%\Scripts\window_swap.ahk 
-	; Ctrl + Alt + Shift + Z: Swap all windows from one monitor to another 
-#include %A_ScriptDir%\Scripts\create_new_txt.ahk 
-	; press q in explorer to create new text file. now prompts user to enter filename
-#include %A_ScriptDir%\Scripts\window_manipulation.ahk 
-	; Shift + Win + Up: maximize a window across all displays
-	; Win + Up/Dn maximize/min (restore functionality after enabling fancyzones)
-	; Ctrl + ALt + Shift + Space : always on top
-#include %A_ScriptDir%\Scripts\rekey.ahk
-	; Capslock -> Control
-	; Ctrl + Alt + Capslock -> Capslock
-	; Ctrl + [ -> Escape
-	; Ctrl / -> \
-	; "Ctrl Shift <" -> {
-	; "Ctrl Shift >" -> }
-	; Ctrl + Alt + Shift + M : Magrittr pipe
-#include %A_ScriptDir%\Scripts\explorer_shortcuts.ahk
-	; Press ~ to move up a folder in Explorer
-	; Ctrl + Alt + Shift + ...
-		; E: open desktop
-		; J: open downloads
-		; D: open dropbox (personal)
-		; H: open dropbox (harvard)
-		; N: open nextcloud
-		; C: open c drive
-	; Restart windows explorer: Ctrl+Alt+Win+E
-#include %A_ScriptDir%\Scripts\wallpaper.ahk
-	; Ctrl + Alt + Shift + ...
-		; W: download new satellite wallpaper
-		; Q: refresh/reload existing wallpaper
-#include %A_ScriptDir%\Scripts\win10_mods.ahk
-	; Ctrl + Alt + Shift + ...
-		; B: open bluetooth Menu
-		; L: lock keypad
-		; V: registry -- re-enable dark mode and restart windows explorer
-		; T: toggle alt tab behavior (current vs. all virutal desktops)
-		; I: rainmeter layout lab_left
-		; O: rainmeter layout lab right
-	; Ctrl + Win + Alt + 
-		; D/L: older. toggle dark or light mode registry
-#include %A_ScriptDir%\Scripts\git.ahk
-	; Ctrl + Win + Alt + S: run auto_git.ps1
-	; 	X : run same but window is hidden
-
-
-
-
-
-
-
-
-
-
 
