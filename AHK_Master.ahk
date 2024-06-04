@@ -77,7 +77,7 @@ Source Scripts
 - need a line break at the end after the last 'Return'
 
 [[ToDo]]
-
+- [ ] debug finnicky order for first few includes. isolate them. put some test msgbox hotkey before or after. see if there is reproducible problem
 
 [[Reference]]
 https://www.maketecheasier.com/favorite-autohotkey-scripts/
