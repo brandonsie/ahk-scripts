@@ -1,12 +1,12 @@
 ﻿; New text (or other) file in current location
 ; lightly modified from: https://www.autohotkey.com/boards/viewtopic.php?t=64289
 ; changes: InputBox to prompt user to enter new filename, including extension
-; activate with Q
+; activate with ctrl+Q (previously just Q, but caused issues with file renaming)
 
 #IfWinActive, ahk_class CabinetWClass
-q:: ;explorer - create new text file and open it with Notepad++
+^q:: ;explorer - create new text file and open it with Notepad++
 #IfWinActive, ahk_class ExploreWClass
-q:: ;explorer - create new text file and open it with Notepad++
+^q:: ;explorer - create new text file and open it with Notepad++
 vPathNotepadP := "C:\Program Files (x86)\Notepad++\notepad++.exe"
 
 ;vNameNoExt := "New Text Document"

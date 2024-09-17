@@ -23,7 +23,8 @@ Menu, Tray, Icon, %I_Icon%
 #Include %A_ScriptDir%\Scripts\window_swap.ahk 
 	; Ctrl + Alt + Shift + Z: Swap all windows from one monitor to another 
 #Include %A_ScriptDir%\Scripts\create_new_txt.ahk 
-	; press q in explorer to create new text file. now prompts user to enter filename
+	; press ctrl+q in explorer to create new text file. now prompts user to enter filename
+	; error if renaming file with a name that contains a q. change from just q to ctrl+q
 #Include %A_ScriptDir%\Scripts\window_manipulation.ahk 
 	; Shift + Win + Up: maximize a window across all displays
 	; Win + Up/Dn maximize/min (restore functionality after enabling fancyzones)
